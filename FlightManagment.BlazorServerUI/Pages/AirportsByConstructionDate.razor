@@ -1,0 +1,43 @@
+﻿@page "/airportsbyconstructiondate"
+@inject Services.AirportService _airportService;
+
+
+<h3>Airports By Construction Date</h3>
+
+@if (Airports == null)
+{
+    <div>The list is empty</div>
+}
+else
+{
+    <table class="table table--primary fadeIn">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Construction Date</th>
+                <th>CountryId</th>
+            </tr>
+        </thead>
+        <tbody class="table--primary__body">
+            @foreach (var airport in Airports)
+            {
+                <tr>
+                    <td>@airport.Id</td>
+                    <td>@airport.Name</td>
+                    <td>@Convert.ToDateTime(airport.ConstructionDate).ToShortDateString()</td>
+                    <td>@airport.CountryId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Airport> Airports;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Airports = await _airportService.GetAirportsByConstructionDate();
+    }
+}

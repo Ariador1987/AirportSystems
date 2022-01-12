@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "da3169ed-51cc-4d89-935e-c4deccb092dc": {
+      "ProjectGuid": "da3169ed-51cc-4d89-935e-c4deccb092dc",
+      "DisplayName": "FlightManagment.API",
+      "ColorIndex": 0
+    },
+    "0c10c7b1-356d-4a81-a772-cacc8b3a81cc": {
+      "ProjectGuid": "0c10c7b1-356d-4a81-a772-cacc8b3a81cc",
+      "DisplayName": "FlightManagment.DAL",
+      "ColorIndex": 1
+    },
+    "b41ee2fc-5380-48d4-b04a-8cf5cc260213": {
+      "ProjectGuid": "b41ee2fc-5380-48d4-b04a-8cf5cc260213",
+      "DisplayName": "FlightManagment.Repository",
+      "ColorIndex": 2
+    },
+    "d122f5a9-488c-42c8-b0fa-5f1c2fe9a4fe": {
+      "ProjectGuid": "d122f5a9-488c-42c8-b0fa-5f1c2fe9a4fe",
+      "DisplayName": "FlightManagment.Domain",
+      "ColorIndex": 3
+    },
+    "9566f3a5-ecc5-4c7a-85e2-1c1ab7d224c5": {
+      "ProjectGuid": "9566f3a5-ecc5-4c7a-85e2-1c1ab7d224c5",
+      "DisplayName": "FlightManagment.Exceptions",
+      "ColorIndex": 4
+    },
+    "08d19074-47ab-4688-843c-871ae4c609c5": {
+      "ProjectGuid": "08d19074-47ab-4688-843c-871ae4c609c5",
+      "DisplayName": "FlightManagment.Configurations",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "a3dc165f-b4f7-4e3b-865a-b91c4fa1074f": {
+      "ProjectGuid": "a3dc165f-b4f7-4e3b-865a-b91c4fa1074f",
+      "DisplayName": "FlightManagment.BlazorServerUI",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FlightManagment.API</name>
+    </assembly>
+    <members>
+        <member name="T:FlightManagment.API.Controllers.AirportsController">
+            <summary>
+            Endpoint for intraction with airport related operations
+            </summary>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AirportsController.GetAll">
+            <summary>
+            Retrives the list of all airports
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AirportsController.GetSingleWithDetails(System.Int32)">
+            <summary>
+            Get a single airport with list of flights
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AirportsController.GetAllByConstructionDate">
+            <summary>
+            List of airports sorted by construction date descending.
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AirportsController.AddAirport(FlightManagment.Domain.Models.Airport)">
+            <summary>
+            Add a single airport with list of flights
+            </summary>
+            <param name="airport"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FlightManagment.API.Controllers.CountriesController">
+            <summary>
+            Endpoint for interaction with country related operations
+            </summary>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.CountriesController.GetAll">
+            <summary>
+            Gets a list of all countriees
+            </summary>
+        </member>
+    </members>
+</doc>

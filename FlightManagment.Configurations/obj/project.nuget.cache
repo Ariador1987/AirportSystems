@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "GqNklM07jtoSAN3HnbGhLJX9BHOAltVUej2CtkCxfssZ6ErE7W8QrQUuES9Jih8mxQxyeCyIOa+axr7lS3Dxkw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\BOKI\\source\\repos\\AirportSystems\\FlightManagment.Configurations\\FlightManagment.Configurations.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BOKI\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\BOKI\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\BOKI\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\BOKI\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\BOKI\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\BOKI\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\BOKI\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

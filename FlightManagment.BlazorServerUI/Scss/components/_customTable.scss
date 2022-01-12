@@ -1,0 +1,179 @@
+﻿.table {
+    border-collapse: collapse;
+    margin: 1.5rem 0.5rem;
+    font-size: 0.9em;
+    min-width: min-content;
+    color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 3px 3px 16px rgba(#000, 0.8);
+    box-sizing: border-box;
+
+    &--primary {
+        background-color: #333;
+        text-align: left;
+        color: #fff;
+
+        th,
+        td {
+            padding: 0.8rem 1rem;
+        }
+
+        thead {
+            letter-spacing: 1.1px;
+        }
+
+        &__body {
+            background: linear-gradient(to bottom right, blue 35%, navy);
+
+            tr:nth-of-type(even) {
+                background-color: lighten(#0000ff, 5%);
+            }
+
+            tr:not(:last-of-type) {
+                border-bottom: 1px solid #fafafa3d;
+            }
+
+            tr:last-of-type {
+                border-bottom: 3px solid #333;
+            }
+        }
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10rem;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    box-shadow: 2px 2px 12px rgba(#000, 0.3);
+    margin: 0 0.3rem;
+    transition: transform 0.3s ease;
+
+    &--primary {
+        background-color: #eee;
+        transition: transform 0.2s;
+        display: flex;
+        align-items: center;
+
+        i {
+            transform: translateX(-3px);
+            margin-right: 3px;
+            font-size: 140%;
+            color: #f0950d;
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 14px 1px rgba(#000, 0.3);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 2px 2px 9px rgba(#000, 0.3);
+        }
+    }
+
+    &--secondary {
+        display: flex;
+        align-items: center;
+    }
+
+    &--small {
+        font-size: 0.8em;
+        border-radius: 5px;
+        padding: 0.4rem 0.8rem;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+    }
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    // height: 2rem;
+    background-color: #444;
+    border-radius: 100%;
+    margin-right: 5px;
+    overflow: hidden;
+
+    i {
+        color: #fff;
+    }
+}
+
+$checkbox-width: 44px;
+$checkbox-height: calc(#{$checkbox-width} / 2);
+$checkbox-border-radius: calc(#{$checkbox-height} / 2);
+
+.checkbox-toggle {
+    width: $checkbox-width;
+    height: $checkbox-height;
+    border-radius: $checkbox-border-radius;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+
+    &__input {
+        &:checked ~ .checkbox-toggle__input-fill {
+            background-color: #0099ff;
+
+            &::after {
+                transform: translateX($checkbox-height);
+            }
+        }
+
+        display: none;
+
+        &-fill {
+            position: relative;
+            width: $checkbox-width;
+            height: $checkbox-height;
+            border-radius: $checkbox-border-radius;
+            // background-color: #0099ff;
+            background-color: #ccc;
+            transition: background-color 0.2s;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                // transform: translate(-50%, -50%);
+                width: $checkbox-height;
+                height: $checkbox-height;
+                border-radius: $checkbox-border-radius;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(#000, 0.25);
+                transition: transform 0.2s;
+            }
+        }
+    }
+}

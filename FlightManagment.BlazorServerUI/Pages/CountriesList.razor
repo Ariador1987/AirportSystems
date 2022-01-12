@@ -1,0 +1,40 @@
+﻿@page "/countrieslist"
+@inject Services.CountryService _countryService;
+
+
+<h3>Countries By Construction Date</h3>
+
+
+@if (Countries == null)
+{
+    <div>The list is empty</div>
+}
+else
+{
+    <table class="table table--primary fadeIn">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody class="table--primary__body">
+            @foreach (var country in Countries)
+            {
+                <tr>
+                    <td>@country.Id</td>
+                    <td>@country.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Country> Countries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Countries = await _countryService.GetCountries();
+    }
+}
