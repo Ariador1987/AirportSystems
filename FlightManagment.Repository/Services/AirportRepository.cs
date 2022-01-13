@@ -16,7 +16,7 @@ namespace FlightManagment.Repository.Services
 
         public AirportRepository(ApplicationDbContext context) : base(context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public async Task<List<Airport>> GetAllByConstructionDate()
@@ -25,5 +25,26 @@ namespace FlightManagment.Repository.Services
                 .OrderByDescending(x => x.ConstructionDate)
                 .ToListAsync();
         }
+
+        //public async Task<bool> UpdateCountriesWithAirports()
+        //{
+        //    int updatedCount = 0;
+        //    var airports = _context.Airports.ToList();
+        //    var countries = _context.Countries.ToList();
+
+        //    foreach (var airport in airports)
+        //    {
+        //        foreach (var country in countries)
+        //        {
+        //            if (airport.CountryId == country.Id)
+        //            {
+        //                country.Airports.Add(airport);
+        //                updatedCount++;
+        //                await _context.SaveChangesAsync();
+        //            }
+        //        }
+        //    }
+        //    return updatedCount > 0;
+        //}
     }
 }

@@ -29,5 +29,13 @@ namespace FlightManagment.API.Controllers
             return StatusCode(200, countries);
            
         }
+
+        [HttpGet]
+        [Route("GetAllWithCountries")]
+        public async Task<IActionResult> GetAllWithCountries() 
+        {
+            var countries = await _countryRepository.GetAllWithAirports();
+            return StatusCode(200, countries);
+        }
     }
 }

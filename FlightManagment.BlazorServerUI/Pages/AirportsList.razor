@@ -23,7 +23,7 @@ else
                 <tr>
                     <td>@airport.Id</td>
                     <td>@airport.Name</td>
-                    <td>@Convert.ToDateTime(airport.ConstructionDate).ToShortDateString()</td>
+                    <td>@Convert.ToDateTime(airport.ConstructionDate).ToString("dd.MM.yyyy")</td>
                     <td>@airport.CountryId</td>
                 </tr>
             }

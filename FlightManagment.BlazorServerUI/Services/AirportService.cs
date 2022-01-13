@@ -7,7 +7,6 @@ namespace FlightManagment.BlazorServerUI.Services
     {
         public const string GetAllPathExtension = "Airports/GetAll";
         public const string GetAllByConstructionDate = "Airports/GetAllByConstructionDate";
-        //public const string FullUrl = "https://localhost:7068/api/Airports/GetAll";
 
         private readonly HttpClient _httpClient;
 
