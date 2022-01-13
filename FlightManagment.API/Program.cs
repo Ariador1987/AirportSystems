@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IAirportRepository, AirporteRepository>();
+builder.Services.AddScoped<IAirportRepository, AirportRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 //builder.Services.AddScoped<IFlightsRepository, FlightsRepository>();
 

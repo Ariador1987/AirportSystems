@@ -75,7 +75,7 @@ namespace FlightManagment.API.Controllers
         public async Task<IActionResult> AddAirport([FromBody]Airport airport)
         {
             await _airportRepository.AddAsync(airport);
-            return StatusCode(201, airport);
+            return StatusCode(201);
         }
     }
 }

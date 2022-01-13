@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace FlightManagment.Repository.Services
 {
-    public class AirporteRepository : GenericRepository<Airport>, IAirportRepository
+    public class AirportRepository : GenericRepository<Airport>, IAirportRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public AirporteRepository(ApplicationDbContext context) : base(context)
+        public AirportRepository(ApplicationDbContext context) : base(context)
         {
             this._context = context;
         }
