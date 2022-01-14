@@ -2,7 +2,7 @@
 Flight Managment Module Demo App
 
 - Fullstack (.NET API and Blazor Server)
-- N-Tier Architecture
+- Layered Architecture
 - Data Seeding
 - Repository With Specification Pattern
 - Serilog (MSSQL and File)
