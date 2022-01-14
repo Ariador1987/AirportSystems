@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagment.Domain.Models.DTOs.CountryDTO
 {
-    public class CountryDTO
+    public class CountryBaseDTO
     {
         [Required]
         [StringLength(50)]

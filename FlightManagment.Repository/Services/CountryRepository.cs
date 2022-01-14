@@ -23,7 +23,6 @@ namespace FlightManagment.Repository.Services
         {
             return await _context.Countries
                 .Include(x => x.Airports)
-                .Where(x => x.Airports.Any())
                 .ToListAsync();
         }
     }

@@ -25,7 +25,6 @@ namespace FlightManagment.Domain.Models
         // NavProps
         public int CountryId { get; set; }
         [ForeignKey(nameof(CountryId))]
-        [NotMapped]
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
     }
 }

@@ -41,7 +41,7 @@ namespace FlightManagment.API.Controllers
             try
             {
                 var airportList = await _airportRepository.GetAllAsync();
-                var airportListDto = _mapper.Map<List<AirportDTO>>(airportList);
+                var airportListDto = _mapper.Map<List<AirportBaseDTO>>(airportList);
                 return StatusCode(200, airportListDto);
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace FlightManagment.API.Controllers
                     return StatusCode(404);
                 
                 var airport = await _airportRepository.GetAsync(id);
-                var airportDto = _mapper.Map<AirportDTO>(airport);
+                var airportDto = _mapper.Map<AirportBaseDTO>(airport);
 
                 return StatusCode(200, airportDto);
             }
@@ -98,7 +98,7 @@ namespace FlightManagment.API.Controllers
             try
             {
                 var airportList = await _airportRepository.GetAllByConstructionDate();
-                var airportListDto = _mapper.Map<List<AirportDTO>>(airportList);
+                var airportListDto = _mapper.Map<List<AirportBaseDTO>>(airportList);
                 return StatusCode(200, airportListDto);
             }
             catch (Exception ex)

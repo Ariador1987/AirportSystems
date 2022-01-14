@@ -53,13 +53,49 @@
         </member>
         <member name="T:FlightManagment.API.Controllers.CountriesController">
             <summary>
-            Endpoint for interaction with country related operations
+            Endpoint for intraction with Country related operations
             </summary>
         </member>
         <member name="M:FlightManagment.API.Controllers.CountriesController.GetAll">
             <summary>
-            Gets a list of all countriees
+            Retrives the list of all Countrys
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.CountriesController.GetAllWithAirports">
+            <summary>
+            Retrives the list of all Countrys with their Airports
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.CountriesController.GetSingle(System.Int32)">
+            <summary>
+            Get a single Country by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.CountriesController.AddCountry(FlightManagment.Domain.Models.DTOs.CountryDTO.CountryBaseDTO)">
+            <summary>
+            Add a single Country
+            </summary>
+            <param name="countryDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.CountriesController.UpdateCountry(System.Int32,FlightManagment.Domain.Models.DTOs.CountryDTOs.CountryUpdateDTO)">
+            <summary>
+            Updates an Country
+            </summary>
+            <param name="id"></param>
+            <param name="countryDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.CountriesController.DeleteCountry(System.Int32)">
+            <summary>
+            Deletes a single Country
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

@@ -5,20 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlightManagment.Domain.Models
+namespace FlightManagment.Domain.Models.DTOs.CountryDTOs
 {
-    public class Country
+    public class CountryUpdateDTO
     {
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
-        // NavProps
-        public IList<Airport> Airports { get; set; }
-
-        public Country()
-        {
-            Airports = new List<Airport>();
-        }
     }
 }

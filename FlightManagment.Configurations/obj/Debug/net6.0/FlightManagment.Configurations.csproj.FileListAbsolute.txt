@@ -2,14 +2,14 @@ C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Deb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Configurations.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\ref\FlightManagment.Configurations.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Configurations.pdb
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Domain.dll
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Domain.pdb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.csproj.AssemblyReference.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.AssemblyInfoInputs.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.AssemblyInfo.cs
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.csproj.CoreCompileInputs.cache
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.csproj.CopyComplete
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\ref\FlightManagment.Configurations.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.pdb
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Domain.dll
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Domain.pdb
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.csproj.CopyComplete
