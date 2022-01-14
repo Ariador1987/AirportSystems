@@ -10,6 +10,7 @@ namespace FlightManagment.Domain.Models.DTOs.CountryDTO
     public class CountryDTO
     {
         [Required]
+        [StringLength(50)]
         public string Name { get; set; }
 
     }
