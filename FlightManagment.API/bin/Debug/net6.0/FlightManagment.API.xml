@@ -15,25 +15,40 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:FlightManagment.API.Controllers.AirportsController.GetSingleWithDetails(System.Int32)">
+        <member name="M:FlightManagment.API.Controllers.AirportsController.GetSingle(System.Int32)">
             <summary>
-            Get a single airport with list of flights
+            Get a single airport by id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.GetAllByConstructionDate">
             <summary>
-            List of airports sorted by construction date descending.
+            List of airports sorted by construction date descending
             </summary>
             <param></param>
             <returns></returns>
         </member>
-        <member name="M:FlightManagment.API.Controllers.AirportsController.AddAirport(FlightManagment.Domain.Models.Airport)">
+        <member name="M:FlightManagment.API.Controllers.AirportsController.AddAirport(FlightManagment.Domain.Models.DTOs.AirportDTOs.AirportCreateDTO)">
             <summary>
-            Add a single airport with list of flights
+            Add a single airport
             </summary>
-            <param name="airport"></param>
+            <param name="airportDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AirportsController.UpdateAirport(System.Int32,FlightManagment.Domain.Models.DTOs.AirportDTOs.AirportUpdateDTO)">
+            <summary>
+            Updates an airport
+            </summary>
+            <param name="id"></param>
+            <param name="airportDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AirportsController.DeleteAirport(System.Int32)">
+            <summary>
+            Deletes a single airport
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:FlightManagment.API.Controllers.CountriesController">

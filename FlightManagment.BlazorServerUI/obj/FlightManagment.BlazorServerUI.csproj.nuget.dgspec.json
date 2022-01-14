@@ -103,7 +103,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\BOKI\\source\\repos\\AirportSystems\\FlightManagment.Domain\\FlightManagment.Domain.csproj": {
+                "projectPath": "C:\\Users\\BOKI\\source\\repos\\AirportSystems\\FlightManagment.Domain\\FlightManagment.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

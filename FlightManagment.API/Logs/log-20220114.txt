@@ -1,0 +1,10 @@
+2022-01-14 00:58:31.936 +01:00 [WRN] Airports UpdateAirport: Update failed with bad data - id: 1.
+2022-01-14 00:58:58.429 +01:00 [WRN] Airports UpdateAirport: Update failed with bad data - id: 1.
+2022-01-14 00:59:20.742 +01:00 [WRN] Airports UpdateAirport: Something went wrong with updating the book with id - 1.
+2022-01-14 00:59:20.746 +01:00 [ERR] Airports UpdateAirport: Update failed. Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AirportUpdateDTO -> Airport
+FlightManagment.Domain.Models.DTOs.AirportDTOs.AirportUpdateDTO -> FlightManagment.Domain.Models.Airport - 
+2022-01-14 01:03:56.633 +01:00 [WRN] Airports UpdateAirport: Something went wrong with updating the book with id - 1.
+2022-01-14 01:03:56.679 +01:00 [ERR] Airports UpdateAirport: Update failed. The instance of entity type 'Airport' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. - 

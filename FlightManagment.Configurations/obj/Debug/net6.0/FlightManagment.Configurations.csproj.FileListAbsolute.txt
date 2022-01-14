@@ -10,3 +10,6 @@ C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Deb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\ref\FlightManagment.Configurations.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.pdb
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Domain.dll
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\bin\Debug\net6.0\FlightManagment.Domain.pdb
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Configurations\obj\Debug\net6.0\FlightManagment.Configurations.csproj.CopyComplete

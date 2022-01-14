@@ -1,5 +1,6 @@
 ﻿using FlightManagment.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace FlightManagment.Repository
 {
@@ -28,7 +29,7 @@ namespace FlightManagment.Repository
 
         public async Task<bool> Exists(int id)
         {
-            var entity = await GetAsync(id);
+            var entity = await _db.Set<T>().FindAsync(id);
             return entity is not null;
         }
 
