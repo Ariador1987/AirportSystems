@@ -9,7 +9,7 @@ namespace FlightManagment.Domain.Models.DTOs.CountryDTOs
 {
     public class CountryDetailsDTO
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
         public IList<AirportBaseDTO> Airports { get; set; }
     }
 }

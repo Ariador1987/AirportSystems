@@ -53,7 +53,7 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// Retrives the list of all Countrys with their Airports
+        /// Retrives the list of all Countries with their Airports
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -67,8 +67,8 @@ namespace FlightManagment.API.Controllers
             try
             {
                 var countryList = await _countriesRepository.GetAllWithAirports();
-                //var countryDetailsDto = _mapper.Map<List<CountryDetailsDTO>>(countryList);
-                return StatusCode(200, countryList);
+                var countryDetailsDto = _mapper.Map<List<CountryDetailsDTO>>(countryList);
+                return StatusCode(200, countryDetailsDto);
             }
             catch (Exception ex)
             {

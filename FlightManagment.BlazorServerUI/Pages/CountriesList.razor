@@ -2,7 +2,7 @@
 @inject Services.CountryService _countryService;
 
 
-<h3>Countries By Construction Date</h3>
+<h3>Countries</h3>
 
 
 @if (Countries == null)
@@ -14,7 +14,6 @@ else
     <table class="table table--primary fadeIn">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
             </tr>
         </thead>
@@ -22,7 +21,6 @@ else
             @foreach (var country in Countries)
             {
                 <tr>
-                    <td>@country.Id</td>
                     <td>@country.Name</td>
                 </tr>
             }

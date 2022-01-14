@@ -21,7 +21,7 @@ namespace FlightManagment.Configurations.MapperConfig
 
             CreateMap<Country, CountryBaseDTO>().ReverseMap();
             CreateMap<Country, CountryUpdateDTO>().ReverseMap();
-            //CreateMap<Country, CountryDetailsDTO>().ReverseMap();
+            CreateMap<Country, CountryDetailsDTO>().ReverseMap();
         }
     }
 }

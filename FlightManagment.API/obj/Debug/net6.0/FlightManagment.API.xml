@@ -6,39 +6,39 @@
     <members>
         <member name="T:FlightManagment.API.Controllers.AirportsController">
             <summary>
-            Endpoint for intraction with airport related operations
+            Endpoint for intraction with Airport related operations
             </summary>
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.GetAll">
             <summary>
-            Retrives the list of all airports
+            Retrives the list of all Airports
             </summary>
             <returns></returns>
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.GetSingle(System.Int32)">
             <summary>
-            Get a single airport by id
+            Get a single Airport by id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.GetAllByConstructionDate">
             <summary>
-            List of airports sorted by construction date descending
+            List of Airports sorted by construction date descending
             </summary>
             <param></param>
             <returns></returns>
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.AddAirport(FlightManagment.Domain.Models.DTOs.AirportDTOs.AirportCreateDTO)">
             <summary>
-            Add a single airport
+            Add a single Airport
             </summary>
             <param name="airportDto"></param>
             <returns></returns>
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.UpdateAirport(System.Int32,FlightManagment.Domain.Models.DTOs.AirportDTOs.AirportUpdateDTO)">
             <summary>
-            Updates an airport
+            Updates an Airport
             </summary>
             <param name="id"></param>
             <param name="airportDto"></param>
@@ -46,7 +46,7 @@
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.DeleteAirport(System.Int32)">
             <summary>
-            Deletes a single airport
+            Deletes a single Airport
             </summary>
             <param name="id"></param>
             <returns></returns>
@@ -64,7 +64,7 @@
         </member>
         <member name="M:FlightManagment.API.Controllers.CountriesController.GetAllWithAirports">
             <summary>
-            Retrives the list of all Countrys with their Airports
+            Retrives the list of all Countries with their Airports
             </summary>
             <returns></returns>
         </member>

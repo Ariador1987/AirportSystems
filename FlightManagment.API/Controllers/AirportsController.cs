@@ -9,7 +9,7 @@ using ILogger = Serilog.ILogger;
 namespace FlightManagment.API.Controllers
 {
     /// <summary>
-    /// Endpoint for intraction with airport related operations
+    /// Endpoint for intraction with Airport related operations
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -27,7 +27,7 @@ namespace FlightManagment.API.Controllers
         }
         
         /// <summary>
-        /// Retrives the list of all airports
+        /// Retrives the list of all Airports
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -52,7 +52,7 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// Get a single airport by id
+        /// Get a single Airport by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -83,7 +83,7 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// List of airports sorted by construction date descending
+        /// List of Airports sorted by construction date descending
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -109,7 +109,7 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// Add a single airport
+        /// Add a single Airport
         /// </summary>
         /// <param name="airportDto"></param>
         /// <returns></returns>
@@ -143,7 +143,7 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// Updates an airport
+        /// Updates an Airport
         /// </summary>
         /// <param name="id"></param>
         /// <param name="airportDto"></param>
@@ -191,7 +191,7 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// Deletes a single airport
+        /// Deletes a single Airport
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
