@@ -97,5 +97,45 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:FlightManagment.API.Controllers.FlightsController">
+            <summary>
+            Endpoint for intraction with Flight related operations
+            </summary>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.FlightsController.GetAll">
+            <summary>
+            Retrives the list of all Flights
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.FlightsController.GetSingle(System.Int32)">
+            <summary>
+            Get a single Flight by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.FlightsController.AddFlight(FlightManagment.Domain.Models.DTOs.FlightDTOs.FlightCreateDTO)">
+            <summary>
+            Add a single Flight
+            </summary>
+            <param name="flightDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.FlightsController.UpdateFlight(System.Int32,FlightManagment.Domain.Models.DTOs.FlightDTOs.FlightUpdateDTO)">
+            <summary>
+            Updates an Flight
+            </summary>
+            <param name="id"></param>
+            <param name="flightDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.FlightsController.DeleteFlight(System.Int32)">
+            <summary>
+            Deletes a single Flight
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

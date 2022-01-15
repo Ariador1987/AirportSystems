@@ -16,7 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 builder.Services.AddScoped<IAirportRepository, AirportRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
-//builder.Services.AddScoped<IFlightsRepository, FlightsRepository>();
+builder.Services.AddScoped<IFlightRepository, FlightRepository>();
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 

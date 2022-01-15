@@ -22,9 +22,15 @@ namespace FlightManagment.Domain.Models
         */
         [DataType(DataType.Date)]
         public DateTime? ConstructionDate { get; set; }
+        public IList<Flight> Flights { get; set; }
         // NavProps
         public int CountryId { get; set; }
         [ForeignKey(nameof(CountryId))]
         public virtual Country Country { get; set; }
+
+        public Airport()
+        {
+            Flights = new List<Flight>();
+        }
     }
 }

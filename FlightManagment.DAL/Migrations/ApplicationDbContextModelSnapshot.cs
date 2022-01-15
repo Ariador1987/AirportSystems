@@ -142,13 +142,70 @@ namespace FlightManagment.DAL.Migrations
                         });
                 });
 
+            modelBuilder.Entity("FlightManagment.Domain.Models.Flight", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AirportId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AirportTo")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Carrier")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime>("FlightDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FlightNumber")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
+
+                    b.Property<string>("FlightTime")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AirportId");
+
+                    b.ToTable("Flights");
+                });
+
             modelBuilder.Entity("FlightManagment.Domain.Models.Airport", b =>
                 {
-                    b.HasOne("FlightManagment.Domain.Models.Country", null)
+                    b.HasOne("FlightManagment.Domain.Models.Country", "Country")
                         .WithMany("Airports")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("FlightManagment.Domain.Models.Flight", b =>
+                {
+                    b.HasOne("FlightManagment.Domain.Models.Airport", "Airport")
+                        .WithMany("Flights")
+                        .HasForeignKey("AirportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Airport");
+                });
+
+            modelBuilder.Entity("FlightManagment.Domain.Models.Airport", b =>
+                {
+                    b.Navigation("Flights");
                 });
 
             modelBuilder.Entity("FlightManagment.Domain.Models.Country", b =>
