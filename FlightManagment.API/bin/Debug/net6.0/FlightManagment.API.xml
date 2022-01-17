@@ -108,6 +108,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:FlightManagment.API.Controllers.FlightsController.GetAllWithDetails">
+            <summary>
+            Retrives the list of all Flights
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:FlightManagment.API.Controllers.FlightsController.GetSingle(System.Int32)">
             <summary>
             Get a single Flight by id

@@ -1,0 +1,31 @@
+2022-01-16 18:33:03.232 +01:00 [WRN] Flights GetAllWithDetails: Semething went wrong while attempting to retrieve all Flights
+2022-01-16 18:33:03.361 +01:00 [ERR] Flights GetAllWithDetails: Retrieval failed. Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FlightManagment.Domain.Models.Flight, FlightManagment.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FlightManagment.Domain.Models.DTOs.FlightDTOs.FlightDetailsDTO, FlightManagment.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] - AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Flight -> FlightDetailsDTO
+FlightManagment.Domain.Models.Flight -> FlightManagment.Domain.Models.DTOs.FlightDTOs.FlightDetailsDTO
+
+Type Map configuration:
+Flight -> FlightDetailsDTO
+FlightManagment.Domain.Models.Flight -> FlightManagment.Domain.Models.DTOs.FlightDTOs.FlightDetailsDTO
+
+Destination Member:
+Airport
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Airport -> AirportDetailsDTO
+FlightManagment.Domain.Models.Airport -> FlightManagment.Domain.Models.DTOs.AirportDTOs.AirportDetailsDTO
+
+Destination Member:
+Airport
+
+   at lambda_method132(Closure , Airport , AirportDetailsDTO , ResolutionContext )
+   at lambda_method131(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method131(Closure , Object , List`1 , ResolutionContext ).

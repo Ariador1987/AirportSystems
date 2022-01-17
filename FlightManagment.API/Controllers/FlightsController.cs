@@ -52,6 +52,31 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
+        /// Retrives the list of all Flights
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllWithDetails")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> GetAllWithDetails()
+        {
+            var location = GetControllerActionNames();
+
+            try
+            {
+                var flightList = await _flightRepository.GetFlightsWithDetails();
+                var flightListDto = _mapper.Map<List<FlightDetailsDTO>>(flightList);
+                return StatusCode(200, flightList);
+            }
+            catch (Exception ex)
+            {
+                _logger.Warning($"{location}: Semething went wrong while attempting to retrieve all Flights");
+                return InternalError($"{location}: Retrieval failed. {ex.Message} - {ex.InnerException}.");
+            }
+        }
+
+        /// <summary>
         /// Get a single Flight by id
         /// </summary>
         /// <param name="id"></param>

@@ -16,7 +16,7 @@ namespace FlightManagment.DAL
             modelBuilder.ApplyConfiguration(new CountrySeed());
             modelBuilder.ApplyConfiguration(new AirportSeed());
         }
-
+        
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Flight> Flights { get; set; }
