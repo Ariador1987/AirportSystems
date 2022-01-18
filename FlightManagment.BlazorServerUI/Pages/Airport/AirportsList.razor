@@ -1,7 +1,11 @@
 ﻿@page "/airportslist"
 @inject Services.AirportService _airportService;
+@inject NavigationManager _navMan;
 
-<h3>Airports List</h3>
+<div class="d-flex justify-content-between">
+    <h3>Airports List</h3>
+    <button class="btn btn-primary" @onclick="GoToAddAirport">Add Airport</button>
+</div>
 @if (Airports == null)
 {
     <div>The list is empty</div>
@@ -33,6 +37,11 @@ else
     protected override async Task OnInitializedAsync()
     {
         Airports = await _airportService.GetAirports();
+    }
+
+    private void GoToAddAirport()
+    {
+        _navMan.NavigateTo("airportadd");
     }
 }
 

@@ -1,0 +1,62 @@
+﻿@page "/airportadd"
+@using FlightManagment.Configurations
+@inject Services.AirportService _airportService;
+@inject NavigationManager _navMan;
+
+<EditForm Model="@Airport" OnValidSubmit="@AddAirportAsync" class="form form--gradient mt-5">
+            <h4 class="form__header">Add Airport</h4>
+            <div class="form__group">
+                <label for="name" class="form__label">Airport Name</label>
+                <InputText type="text" @bind-Value="Airport.Name" class="form__input" id="name" />
+            </div>
+            <div class="form__group">
+                <label for="country" class="form__label">Country Id</label>
+                <InputNumber @bind-Value="Airport.CountryId" class="form__input" id="country" />
+            </div>
+            <div class="form__group">
+                <label for="date" class="form__label">Construction Date</label>
+                <InputDate @bind-Value="Airport.ConstructionDate" class="form__input" id="date" />
+            </div>
+            <div class="form__buttons">
+                <button class="btn" @onclick="Close">Back To list</button>
+                <button class="btn" @onclick="ClearAllFields">Clear Fields</button>
+                <button class="btn" type="submit">Submit</button>
+            </div>
+        </EditForm>
+
+@code {
+    [Parameter]
+    public AirportCreateDTO Airport { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Airport = new AirportCreateDTO();
+    }
+
+    private async Task AddAirportAsync()
+    {
+        try
+        {
+            await _airportService.AddAirportAsync(Airport);
+            Close();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    private void Close()
+    {
+        _navMan.NavigateTo("airportslist");
+    }
+
+    private void ClearAllFields()
+    {
+        Airport.ConstructionDate = null;
+        Airport.Name = string.Empty;
+        Airport.CountryId = 0;
+        _navMan.NavigateTo("airportadd");
+
+    }
+}

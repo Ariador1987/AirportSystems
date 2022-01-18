@@ -19,12 +19,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/AirportsByConstructionDate.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWlycG9ydHNCeUNvbnN0cnVjdGlvbkRhdGUucmF6b3I=
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Airport/AirportAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWlycG9ydFxBaXJwb3J0QWRkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/AirportsList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWlycG9ydHNMaXN0LnJhem9y
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Airport/AirportsByConstructionDate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWlycG9ydFxBaXJwb3J0c0J5Q29uc3RydWN0aW9uRGF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Airport/AirportsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWlycG9ydFxBaXJwb3J0c0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Counter.razor]

@@ -228,8 +228,8 @@ namespace FlightManagment.API.Controllers
         #region Privates
         private string GetControllerActionNames()
         {
-           var controller = ControllerContext.ActionDescriptor.ControllerName;
-           var action = ControllerContext.ActionDescriptor.ActionName;
+            var controller = ControllerContext.ActionDescriptor.ControllerName;
+            var action = ControllerContext.ActionDescriptor.ActionName;
 
             return $"{controller} {action}";
         }

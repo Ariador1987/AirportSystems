@@ -6,8 +6,41 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">
+    <span class="oi oi-arrow-top"></span>
+    Click me
+</button>
 
+<br />
+<br />
+<form class="form form--gradient">
+    <h4 class="form__header">Add Flight</h4>
+    <div class="form__group">
+        <label for="name" class="form__label">Flight Number</label>
+        <input type="text" class="form__input" id="name" />
+    </div>
+    <div class="form__group">
+        <label for="name" class="form__label">Flight Date</label>
+        <input type="date" class="form__input" id="name" />
+    </div>
+    <div class="form__group">
+        <label for="name" class="form__label">Flight Time</label>
+        <input type="text" class="form__input" id="name" />
+    </div>
+    <div class="form__group">
+        <label for="name" class="form__label">Carrier</label>
+        <input type="text" class="form__input" id="name" />
+    </div>
+    <div class="form__group">
+        <label for="name" class="form__label">Airport to</label>
+        <input type="text" class="form__input" id="name" />
+    </div>
+    <div class="form__buttons">
+        <a class="btn">Back To list</a>
+        <a class="btn">Clear Fields</a>
+        <a class="btn">Submit</a>
+    </div>
+</form>
 
 @code {
     private int currentCount = 0;
