@@ -3,25 +3,31 @@
 @inject Services.AirportService _airportService;
 @inject NavigationManager _navMan;
 
-<EditForm Model="@Airport" OnValidSubmit="@UpdateAirportAsync" class="form form--gradient mt-5">
-    <h4 class="form__header">Update Airport</h4>
-    <div class="form__group">
-        <label for="name" class="form__label">Airport Name</label>
-        <InputText type="text" @bind-Value="Airport.Name" class="form__input" id="name" />
-    </div>
-    <div class="form__group">
-        <label for="country" class="form__label">Country Id</label>
-        <InputNumber @bind-Value="Airport.CountryId" class="form__input" id="country" />
-    </div>
-    <div class="form__group">
-        <label for="date" class="form__label">Construction Date</label>
-        <InputDate @bind-Value="Airport.ConstructionDate" class="form__input" id="date" />
-    </div>
-    <div class="form__buttons">
-        <button class="btn" @onclick="Close">Back To list</button>
-        <button class="btn" type="submit">Submit</button>
-    </div>
-</EditForm>
+@if (Airport == null) {
+    <div>Please wait</div>
+}
+else {
+    <EditForm Model="@Airport" OnValidSubmit="@UpdateAirportAsync" class="form form--gradient mt-5">
+        <h4 class="form__header">Update Airport</h4>
+        <div class="form__group">
+            <label for="name" class="form__label">Airport Name</label>
+            <InputText type="text" @bind-Value="Airport.Name" class="form__input" id="name" />
+        </div>
+        <div class="form__group">
+            <label for="country" class="form__label">Country Id</label>
+            <InputNumber @bind-Value="Airport.CountryId" class="form__input" id="country" />
+        </div>
+        <div class="form__group">
+            <label for="date" class="form__label">Construction Date</label>
+            <InputDate @bind-Value="Airport.ConstructionDate" class="form__input" id="date" />
+        </div>
+        <div class="form__buttons">
+            <button class="btn" @onclick="Close">Back To list</button>
+            <button class="btn" type="submit">Submit</button>
+        </div>
+    </EditForm>
+}
+
 
 @code {
     [Parameter]
@@ -32,7 +38,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Airport = await _airportService.GetAirportById(id);
+        var obj = await _airportService.GetAirportById(id);
+        Airport = obj;
     }
 
     private async Task UpdateAirportAsync()
