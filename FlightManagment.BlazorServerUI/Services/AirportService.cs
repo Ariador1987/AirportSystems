@@ -3,6 +3,7 @@ using FlightManagment.Configurations;
 using FlightManagment.Domain.Models.DTOs.AirportDTOs;
 using System.Text.Json;
 using System.Text;
+using AutoMapper;
 
 namespace FlightManagment.BlazorServerUI.Services
 {
@@ -10,14 +11,18 @@ namespace FlightManagment.BlazorServerUI.Services
     {
         public const string GetAllPathExtension = "Airports/GetAll";
         public const string GetAllByConstructionDate = "Airports/GetAllByConstructionDate";
+        public const string GetById = "https://localhost:7068/api/Airports/GetSingleAirport/";
         //public const string AddAirport = "Airports/AddAirport";
         public const string AddAirport = "https://localhost:7068/api/Airports/AddAirport";
+        public const string UpdateAirport = "https://localhost:7068/api/Airports/UpdateAirport/";
 
         private readonly HttpClient _httpClient;
+        private readonly IMapper _mapper;
 
-        public AirportService(HttpClient httpClient)
+        public AirportService(HttpClient httpClient, IMapper mapper)
         {
             _httpClient = httpClient;
+            _mapper = mapper;
         }
         
         public async Task<List<Airport>> GetAirports()
@@ -35,6 +40,20 @@ namespace FlightManagment.BlazorServerUI.Services
             var request = new HttpRequestMessage(HttpMethod.Post, AddAirport);
             request.Content = new StringContent(JsonSerializer.Serialize(airportDto), Encoding.UTF8, "application/json");
             await _httpClient.SendAsync(request);
+        }
+
+        public async Task UpdateAirportAsync(AirportUpdateDTO airportDto, int id)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Put, UpdateAirport);
+            request.Content = new StringContent(JsonSerializer.Serialize(airportDto), Encoding.UTF8, "application/json");
+            await _httpClient.SendAsync(request);
+        }
+
+        public async Task<AirportUpdateDTO> GetAirportById(int id)
+        {
+            var airportBaseDto =  await _httpClient.GetFromJsonAsync<AirportBaseDTO>(GetById + id);
+            var airportUpdateDto = _mapper.Map<AirportUpdateDTO>(airportBaseDto);
+            return airportUpdateDto;
         }
     }
 }

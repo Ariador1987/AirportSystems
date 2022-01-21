@@ -20,6 +20,7 @@ namespace FlightManagment.Configurations.MapperConfig
             CreateMap<Airport, AirportCreateDTO>().ReverseMap();
             CreateMap<Airport, AirportUpdateDTO>().ReverseMap();
             CreateMap<Airport, AirportDetailsDTO>().ReverseMap();
+            CreateMap<AirportBaseDTO, AirportUpdateDTO>().ReverseMap();
 
             CreateMap<Country, CountryBaseDTO>().ReverseMap();
             CreateMap<Country, CountryUpdateDTO>().ReverseMap();

@@ -10,6 +10,7 @@ namespace FlightManagment.Domain.Models.DTOs.FlightDTOs
 {
     public class FlightBaseDTO
     {
+        public int Id { get; set; }
         [Required]
         [StringLength(6, MinimumLength = 6, ErrorMessage = "Iata Code has to be exactly six characters.")]
         [Display(Name = "IataCode")]

@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "FlightManagment.BlazorServerUI/1.0.0": {
         "dependencies": {
+          "AutoMapper": "11.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "BuildWebCompiler": "1.12.405",
           "FlightManagment.Configurations": "1.0.0",
           "FlightManagment.Domain": "1.0.0"

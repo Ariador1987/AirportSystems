@@ -26,7 +26,8 @@ else
                     <td>@airport.Name</td>
                     <td>@Convert.ToDateTime(airport.ConstructionDate).ToString("dd.MM.yyyy")</td>
                     <td>
-                        <a class="btn btn-primary btn--small">
+                        <a class="btn btn-primary btn--small"
+                        href="/airportupdate/@airport.Id">
                             <span class="oi oi-pencil"></span>
                             Edit Airport
                         </a>
@@ -52,6 +53,11 @@ else
     private void GoToAddAirport()
     {
         _navMan.NavigateTo("airportadd");
+    }
+
+    private void GoToUpdateAirport()
+    {
+        
     }
 }
 

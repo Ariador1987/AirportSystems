@@ -1,5 +1,6 @@
 using FlightManagment.BlazorServerUI.Data;
 using FlightManagment.BlazorServerUI.Services;
+using FlightManagment.Configurations.MapperConfig;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -12,6 +13,8 @@ builder.Services.AddHttpClient();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<AirportService>();
 builder.Services.AddScoped<CountryService>();
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
 
 var app = builder.Build();
 
