@@ -44,7 +44,7 @@ namespace FlightManagment.BlazorServerUI.Services
 
         public async Task UpdateAirportAsync(AirportUpdateDTO airportDto, int id)
         {
-            var request = new HttpRequestMessage(HttpMethod.Put, UpdateAirport);
+            var request = new HttpRequestMessage(HttpMethod.Put, UpdateAirport + id);
             request.Content = new StringContent(JsonSerializer.Serialize(airportDto), Encoding.UTF8, "application/json");
             await _httpClient.SendAsync(request);
         }
