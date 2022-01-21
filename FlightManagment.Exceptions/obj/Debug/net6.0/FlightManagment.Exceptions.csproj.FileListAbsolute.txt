@@ -3,7 +3,6 @@ C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\bin\Debug\n
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\bin\Debug\net6.0\FlightManagment.Exceptions.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\bin\Debug\net6.0\ref\FlightManagment.Exceptions.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\bin\Debug\net6.0\FlightManagment.Exceptions.pdb
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\obj\Debug\net6.0\FlightManagment.Exceptions.csproj.AssemblyReference.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\obj\Debug\net6.0\FlightManagment.Exceptions.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\obj\Debug\net6.0\FlightManagment.Exceptions.AssemblyInfoInputs.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Exceptions\obj\Debug\net6.0\FlightManagment.Exceptions.AssemblyInfo.cs

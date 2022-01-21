@@ -19,7 +19,6 @@
             </div>
             <div class="form__buttons">
                 <button class="btn" @onclick="Close">Back To list</button>
-                <button class="btn" @onclick="ClearAllFields">Clear Fields</button>
                 <button class="btn" type="submit">Submit</button>
             </div>
         </EditForm>
@@ -27,6 +26,7 @@
 @code {
     [Parameter]
     public AirportCreateDTO Airport { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,14 +49,5 @@
     private void Close()
     {
         _navMan.NavigateTo("airportslist");
-    }
-
-    private void ClearAllFields()
-    {
-        Airport.ConstructionDate = null;
-        Airport.Name = string.Empty;
-        Airport.CountryId = 0;
-        _navMan.NavigateTo("airportadd");
-
     }
 }

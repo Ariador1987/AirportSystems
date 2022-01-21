@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I24OYvtd/ul+14UfBuJhP03oJauzVfl60HNkTmkRrZ8=",
+  "Hash": "10Q18pihVg2Bl6YM/BrnO9PCKozZI/8phOz+ySoGgw8=",
   "Source": "FlightManagment.BlazorServerUI",
   "BasePath": "_content/FlightManagment.BlazorServerUI",
   "Mode": "Default",
@@ -304,6 +304,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\BOKI\\source\\repos\\AirportSystems\\FlightManagment.BlazorServerUI\\wwwroot\\js\\main.js",
+      "SourceId": "FlightManagment.BlazorServerUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\BOKI\\source\\repos\\AirportSystems\\FlightManagment.BlazorServerUI\\wwwroot\\",
+      "BasePath": "_content/FlightManagment.BlazorServerUI",
+      "RelativePath": "js/main.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\main.js"
     }
   ]
 }

@@ -25,6 +25,16 @@ else
                 <tr>
                     <td>@airport.Name</td>
                     <td>@Convert.ToDateTime(airport.ConstructionDate).ToString("dd.MM.yyyy")</td>
+                    <td>
+                        <a class="btn btn-primary btn--small">
+                            <span class="oi oi-pencil"></span>
+                            Edit Airport
+                        </a>
+                        <a class="btn btn-secondary btn--small">
+                            <span class="oi oi-trash"></span>
+                            Delete Airport
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>

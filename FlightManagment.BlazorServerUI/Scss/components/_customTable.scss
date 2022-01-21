@@ -1,4 +1,13 @@
-﻿.table {
+﻿*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.table {
     border-collapse: collapse;
     margin: 1.5rem 0.5rem;
     font-size: 0.9em;
@@ -25,6 +34,7 @@
 
         &__body {
             background: linear-gradient(to bottom right, blue 35%, navy);
+
 
             tr:nth-of-type(even) {
                 background-color: lighten(#0000ff, 5%);
