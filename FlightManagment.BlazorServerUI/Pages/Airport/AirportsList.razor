@@ -1,6 +1,7 @@
 ﻿@page "/airportslist"
 @inject Services.AirportService _airportService;
 @inject NavigationManager _navMan;
+@inject IJSRuntime js;
 
 <div class="d-flex justify-content-between">
     <h3>Airports List</h3>
@@ -31,7 +32,8 @@ else
                             <span class="oi oi-pencil"></span>
                             Edit Airport
                         </a>
-                        <a class="btn btn-secondary btn--small">
+                        <a class="btn btn-secondary btn--small"
+                        @onclick="(() => DeleteAirport(airport.Id))">
                             <span class="oi oi-trash"></span>
                             Delete Airport
                         </a>
@@ -55,9 +57,15 @@ else
         _navMan.NavigateTo("airportadd");
     }
 
-    private void GoToUpdateAirport()
+    private async Task DeleteAirport(int id) 
     {
-        
+        var airport = Airports.FirstOrDefault(x => x.Id == id);
+        var confirm = await js.InvokeAsync<bool>("confirm", $"Are you sure you want to delete {airport.Name}?");
+        if (confirm)
+        {
+            await _airportService.DeleteAirportAsync(id);
+            await OnInitializedAsync();
+        }
     }
 }
 

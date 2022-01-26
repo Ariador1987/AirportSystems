@@ -15,6 +15,8 @@ namespace FlightManagment.BlazorServerUI.Services
         //public const string AddAirport = "Airports/AddAirport";
         public const string AddAirport = "https://localhost:7068/api/Airports/AddAirport";
         public const string UpdateAirport = "https://localhost:7068/api/Airports/UpdateAirport/";
+        public const string DeleteAirport = "https://localhost:7068/api/Airports/DeleteAirport/";
+
 
         private readonly HttpClient _httpClient;
         private readonly IMapper _mapper;
@@ -54,6 +56,12 @@ namespace FlightManagment.BlazorServerUI.Services
             var airportBaseDto =  await _httpClient.GetFromJsonAsync<AirportBaseDTO>(GetById + id);
             var airportUpdateDto = _mapper.Map<AirportUpdateDTO>(airportBaseDto);
             return airportUpdateDto;
+        }
+
+        public async Task DeleteAirportAsync(int id)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, DeleteAirport + id);
+            await _httpClient.SendAsync(request);
         }
     }
 }
