@@ -6,5 +6,7 @@ namespace FlightManagment.Repository.Contracts
     {
         Task<List<Airport>> GetAllByConstructionDate();
 
+        Task<List<Airport>> GetAllWithCountries();
+
     }
 }

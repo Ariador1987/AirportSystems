@@ -40,7 +40,7 @@ namespace FlightManagment.API.Controllers
 
             try
             {
-                var airportList = await _airportRepository.GetAllAsync();
+                var airportList = await _airportRepository.GetAllWithCountries();
                 var airportListDto = _mapper.Map<List<AirportBaseDTO>>(airportList);
                 return StatusCode(200, airportListDto);
             }

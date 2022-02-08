@@ -1,0 +1,56 @@
+﻿@page "/countryupdate/{id:int}"
+@inject Services.CountryService _countryService;
+@inject NavigationManager _navMan;
+
+@if (Country is null)
+{
+    <div>Please Wait</div>
+}
+else
+{
+    <EditForm Model="@Country" OnValidSubmit="@UpdateCountryAsync" class="form form--gradient mt-5">
+        <h4 class="form__header">Update Country</h4>
+        <div class="form__group">
+            <label for="name" class="form__label">Country Name</label>
+            <InputText type="text" @bind-Value="Country.Name" class="form__input" id="name" />
+        </div>
+        <div class="form__buttons">
+            <button class="btn" @onclick="Close">Back To list</button>
+            <button class="btn" type="submit">Submit</button>
+        </div>
+    </EditForm>
+}
+
+@code {
+    [Parameter]
+    public CountryUpdateDTO Country { get; set; }
+    //public List<Country> Countries { get; set; }
+
+    [Parameter]
+    public int id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var obj = await _countryService.GetCountryByIdForUpdate(id);
+        //var countries = await _countryService.GetCountries();
+        Country = obj;
+    }
+
+    private async Task UpdateCountryAsync()
+    {
+        try
+        {
+            await _countryService.UpdateCountryAsync(Country, id);
+            Close();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    private void Close()
+    {
+        _navMan.NavigateTo("countrieslist");
+    }
+}

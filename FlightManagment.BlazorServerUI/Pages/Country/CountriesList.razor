@@ -1,0 +1,69 @@
+﻿@page "/countrieslist"
+@inject Services.CountryService _countryService;
+@inject NavigationManager _navMan;
+@inject IJSRuntime js;
+
+
+<div class="d-flex justify-content-between">
+    <h3>Countries List</h3>
+    <button class="btn btn-primary" @onclick="GoToAddCountry">Add Country</button>
+</div>
+@if (Countries == null)
+{
+    <div>The list is empty</div>
+}
+else
+{
+    <table class="table table--primary fadeIn">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody class="table--primary__body">
+            @foreach (var country in Countries)
+            {
+                <tr>
+                    <td>@country.Name</td>
+                    <td>
+                        <a class="btn btn-primary btn--small"
+                        href="/countryupdate/@country.Id">
+                            <span class="oi oi-pencil"></span>
+                            Edit Country
+                        </a>
+                        <a class="btn btn-secondary btn--small"
+                        @onclick="(() => DeleteCountry(country.Id))">
+                            <span class="oi oi-trash"></span>
+                            Delete Country
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Country> Countries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Countries = await _countryService.GetCountries();
+    }
+
+    private void GoToAddCountry()
+    {
+        _navMan.NavigateTo("countryadd");
+    }
+
+    private async Task DeleteCountry(int id) 
+    {
+        var country = Countries.FirstOrDefault(x => x.Id == id);
+        var confirm = await js.InvokeAsync<bool>("confirm", $"Are you sure you want to delete {country.Name}?");
+        if (confirm)
+        {
+            await _countryService.DeleteCountryAsync(id);
+            await OnInitializedAsync();
+        }
+    }
+}

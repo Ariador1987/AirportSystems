@@ -51,7 +51,7 @@ namespace FlightManagment.BlazorServerUI.Services
             await _httpClient.SendAsync(request);
         }
 
-        public async Task<AirportUpdateDTO> GetAirportById(int id)
+        public async Task<AirportUpdateDTO> GetAirportByIdForUpdate(int id)
         {
             var airportBaseDto =  await _httpClient.GetFromJsonAsync<AirportBaseDTO>(GetById + id);
             var airportUpdateDto = _mapper.Map<AirportUpdateDTO>(airportBaseDto);

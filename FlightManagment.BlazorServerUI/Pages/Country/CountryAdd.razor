@@ -1,0 +1,46 @@
+﻿@page "/countryadd"
+@using FlightManagment.Configurations
+@using FlightManagment.Domain.Models.DTOs.CountryDTO
+@inject Services.CountryService _countryService;
+@inject NavigationManager _navMan;
+
+<EditForm Model="@Country" OnValidSubmit="@AddCountryAsync" class="form form--gradient mt-5">
+            <h4 class="form__header">Add Country</h4>
+            <div class="form__group">
+                <label for="name" class="form__label">Country Name</label>
+                <InputText type="text" @bind-Value="Country.Name" class="form__input" id="name" />
+            </div>
+            <div class="form__buttons">
+                <button class="btn" @onclick="Close">Back To list</button>
+                <button class="btn" type="submit">Submit</button>
+            </div>
+        </EditForm>
+
+@code {
+    [Parameter]
+    public CountryBaseDTO Country { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Country = new CountryBaseDTO();
+    }
+
+    private async Task AddCountryAsync()
+    {
+        try
+        {
+            await _countryService.AddCountryAsync(Country);
+            Close();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    private void Close()
+    {
+        _navMan.NavigateTo("countrieslist");
+    }
+}

@@ -18,5 +18,7 @@ namespace FlightManagment.Domain.Models.DTOs.AirportDTOs
         public DateTime? ConstructionDate { get; set; }
         public int CountryId { get; set; }
 
+        public Country Country { get; set; }
+
     }
 }

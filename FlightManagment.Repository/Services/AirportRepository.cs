@@ -25,6 +25,14 @@ namespace FlightManagment.Repository.Services
                 .OrderByDescending(x => x.ConstructionDate)
                 .ToListAsync();
         }
-        
+
+        public async Task<List<Airport>> GetAllWithCountries()
+        {
+            return await _context.Airports
+                .Include(x => x.Country)
+                .Where(x => x.CountryId == x.Country.Id)
+                .ToListAsync();
+        }
+
     }
 }

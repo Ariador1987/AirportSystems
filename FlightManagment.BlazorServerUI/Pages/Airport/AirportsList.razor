@@ -17,6 +17,7 @@ else
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Country</th>
                 <th>Construction Date</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@ else
             {
                 <tr>
                     <td>@airport.Name</td>
+                    <td>@airport.Country.Name</td>
                     <td>@Convert.ToDateTime(airport.ConstructionDate).ToString("dd.MM.yyyy")</td>
                     <td>
                         <a class="btn btn-primary btn--small"
