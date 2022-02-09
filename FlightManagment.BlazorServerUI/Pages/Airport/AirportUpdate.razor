@@ -3,7 +3,7 @@
 @inject Services.CountryService _countryService;
 @inject NavigationManager _navMan;
 
-@if (Airport == null) {
+@if (Airport is null) {
     <div>Please wait</div>
 }
 else {
@@ -17,7 +17,7 @@ else {
             <label for="country" class="form__label">Country Name</label>
             @*<InputNumber @bind-Value="Airport.CountryId" class="form__input" id="country" />*@
             <InputSelect id="country" @bind-Value="@Airport.CountryId">
-                <option value="---Select---" disabled></option>
+                <option disabled>-- Select --</option>
                     if (Countries == null) {
                         <div>Please Wait...</div>
                     } 
@@ -40,7 +40,6 @@ else {
         </div>
     </EditForm>
 }
-
 
 @code {
     [Parameter]

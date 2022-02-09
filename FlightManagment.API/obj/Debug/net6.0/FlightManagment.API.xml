@@ -11,7 +11,7 @@
         </member>
         <member name="M:FlightManagment.API.Controllers.AirportsController.GetAll">
             <summary>
-            Retrives the list of all Airports
+            Retrives the list of all Airports with their related Countries
             </summary>
             <returns></returns>
         </member>

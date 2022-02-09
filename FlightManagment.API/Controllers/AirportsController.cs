@@ -27,7 +27,7 @@ namespace FlightManagment.API.Controllers
         }
         
         /// <summary>
-        /// Retrives the list of all Airports
+        /// Retrives the list of all Airports with their related Countries
         /// </summary>
         /// <returns></returns>
         [HttpGet]
