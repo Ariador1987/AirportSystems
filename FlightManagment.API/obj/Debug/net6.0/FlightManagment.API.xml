@@ -4,6 +4,20 @@
         <name>FlightManagment.API</name>
     </assembly>
     <members>
+        <member name="M:FlightManagment.API.Controllers.AccountController.Register(FlightManagment.Domain.Models.DTOs.UserDTOs.RegisterUserDTO)">
+            <summary>
+            Endpoint for registering application users
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.AccountController.Login(FlightManagment.Domain.Models.DTOs.UserDTOs.LoginUserDTO)">
+            <summary>
+            Endpoint for logging in application user
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
         <member name="T:FlightManagment.API.Controllers.AirportsController">
             <summary>
             Endpoint for intraction with Airport related operations

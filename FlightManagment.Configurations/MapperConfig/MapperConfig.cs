@@ -4,11 +4,7 @@ using FlightManagment.Domain.Models.DTOs.AirportDTOs;
 using FlightManagment.Domain.Models.DTOs.CountryDTO;
 using FlightManagment.Domain.Models.DTOs.CountryDTOs;
 using FlightManagment.Domain.Models.DTOs.FlightDTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FlightManagment.Domain.Models.DTOs.UserDTOs;
 
 namespace FlightManagment.Configurations.MapperConfig
 {
@@ -31,6 +27,10 @@ namespace FlightManagment.Configurations.MapperConfig
             CreateMap<Flight, FlightCreateDTO>().ReverseMap();
             CreateMap<Flight, FlightUpdateDTO>().ReverseMap();
             CreateMap<Flight, FlightDetailsDTO>().ReverseMap();
+
+            CreateMap<ApplicationUser, RegisterUserDTO>().ReverseMap();
+            CreateMap<ApplicationUser, LoginUserDTO>().ReverseMap();
+
         }
     }
 }

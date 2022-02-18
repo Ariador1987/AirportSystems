@@ -1,8 +1,11 @@
 using FlightManagment.Configurations.MapperConfig;
 using FlightManagment.DAL;
+using FlightManagment.Domain.Models;
 using FlightManagment.Repository.Contracts;
 using FlightManagment.Repository.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -13,6 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddIdentityCore<ApplicationUser>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddScoped<IAirportRepository, AirportRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
