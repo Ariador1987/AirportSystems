@@ -157,5 +157,51 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:FlightManagment.API.Controllers.PassengersController">
+            <summary>
+            Endpoint for intraction with Passenger related operations
+            </summary>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.PassengersController.GetAll">
+            <summary>
+            Retrives the list of all Passengers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.PassengersController.GetAllWithFlights">
+            <summary>
+            Retrives the list of all Passengers with their Airports
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.PassengersController.GetSingle(System.Int32)">
+            <summary>
+            Get a single Passenger by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.PassengersController.AddPassenger(FlightManagment.Domain.Models.DTOs.PassengerDTOs.PassengerBaseDTO)">
+            <summary>
+            Add a single Passenger
+            </summary>
+            <param name="passengerDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.PassengersController.UpdatePassenger(System.Int32,FlightManagment.Domain.Models.DTOs.PassengerDTOs.PassengerBaseDTO)">
+            <summary>
+            Updates an Passenger
+            </summary>
+            <param name="id"></param>
+            <param name="passengerDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlightManagment.API.Controllers.PassengersController.DeletePassenger(System.Int32)">
+            <summary>
+            Deletes a single Passenger
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

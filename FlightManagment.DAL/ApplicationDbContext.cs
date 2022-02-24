@@ -27,5 +27,7 @@ namespace FlightManagment.DAL
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Flight> Flights { get; set; }
+        public DbSet<Passenger> Passengers { get; set; }
+
     }
 }

@@ -10,6 +10,7 @@ namespace FlightManagment.Domain.Models
 {
     public class Flight
     {
+        
         public int Id { get; set; }
         [Required]
         [StringLength(6, MinimumLength = 6, ErrorMessage = "Iata Code has to be exactly six characters.")]
@@ -28,5 +29,12 @@ namespace FlightManagment.Domain.Models
         public int? AirportId { get; set; }
         [ForeignKey(nameof(AirportId))]
         public Airport Airport { get; set; }
+
+        public IList<Passenger> Passengers { get; set; }
+
+        public Flight()
+        {
+            Passengers = new List<Passenger>();
+        }
     }
 }

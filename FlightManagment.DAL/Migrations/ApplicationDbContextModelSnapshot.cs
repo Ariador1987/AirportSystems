@@ -169,7 +169,7 @@ namespace FlightManagment.DAL.Migrations
                         {
                             Id = "332286ba-b449-4bce-8628-f148088fa0e6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "965525e0-fc59-4290-b60c-965865232e7f",
+                            ConcurrencyStamp = "aa10515f-f358-47f4-bd23-492ac95d93f1",
                             Email = "admin@as.com",
                             EmailConfirmed = false,
                             FirstName = "system",
@@ -177,9 +177,9 @@ namespace FlightManagment.DAL.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@AS.COM",
                             NormalizedUserName = "ADMIN@AS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFPuoan5PulRUUqrQNN+LNcMIqdRnUr8G5eIxOR1A6rdPr/27iojGF1RljLHwNbPLQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJklDvZ8oZpWmWJ85ux6jHIYdbCuQShqlXcwHJ/4FKYYVfLz1VirxcbV5POhESmp8g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "68b7f39f-b8b6-4814-8b2f-2e06b85f1b4d",
+                            SecurityStamp = "de82f84d-b18b-45f5-9a99-cb4e6feb61c3",
                             TwoFactorEnabled = false,
                             UserName = "admin@as.com"
                         },
@@ -187,7 +187,7 @@ namespace FlightManagment.DAL.Migrations
                         {
                             Id = "f5ee4379-a6b0-4350-9fed-6501306b7ff2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a68a9f66-f638-427f-82ed-ea3d7e386640",
+                            ConcurrencyStamp = "e9164678-ab99-42f9-a0aa-1ee3e7ead955",
                             Email = "checker@as.com",
                             EmailConfirmed = false,
                             FirstName = "system",
@@ -195,9 +195,9 @@ namespace FlightManagment.DAL.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CHECKER@AS.COM",
                             NormalizedUserName = "CHECKER@AS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBJnFZ23xG0iGibr9csnCOdm4RleGG718sbWV6BhRJD6I0RqLtjmCk+tqi+J4KExGQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELA1vA914S/lTGwK92IG9G2koCDmiJ3TUyelmsPO8ZMn3zL2tULDDQGo3LV4SDhRmw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "579611f9-0f52-4895-83c5-cff2f2032f20",
+                            SecurityStamp = "542ad960-1778-4b34-8123-b02dc490ff89",
                             TwoFactorEnabled = false,
                             UserName = "checker@as.com"
                         });
@@ -292,6 +292,48 @@ namespace FlightManagment.DAL.Migrations
                     b.ToTable("Flights");
                 });
 
+            modelBuilder.Entity("FlightManagment.Domain.Models.Passenger", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("CHeckInTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Firstname")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int?>("FlightId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("SeatNumber")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
+
+                    b.Property<bool>("isCheckedIn")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FlightId");
+
+                    b.ToTable("Passengers");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -322,14 +364,14 @@ namespace FlightManagment.DAL.Migrations
                         new
                         {
                             Id = "0468917c-e1a0-459c-a187-f964f3a28911",
-                            ConcurrencyStamp = "f486bfdb-6964-4b38-9d6b-5940f741cb7c",
+                            ConcurrencyStamp = "d3efadfd-05f8-4fcf-8b16-5ac90d9c8193",
                             Name = "Checker",
                             NormalizedName = "CHECKER"
                         },
                         new
                         {
                             Id = "7e64a228-607e-4d71-aa2a-7c793358bdc0",
-                            ConcurrencyStamp = "b270125b-b704-49ce-91e9-2bc23eb770e4",
+                            ConcurrencyStamp = "3005358b-0544-42d3-9c35-b888158ebee3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -475,6 +517,15 @@ namespace FlightManagment.DAL.Migrations
                     b.Navigation("Airport");
                 });
 
+            modelBuilder.Entity("FlightManagment.Domain.Models.Passenger", b =>
+                {
+                    b.HasOne("FlightManagment.Domain.Models.Flight", "Flight")
+                        .WithMany("Passengers")
+                        .HasForeignKey("FlightId");
+
+                    b.Navigation("Flight");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -534,6 +585,11 @@ namespace FlightManagment.DAL.Migrations
             modelBuilder.Entity("FlightManagment.Domain.Models.Country", b =>
                 {
                     b.Navigation("Airports");
+                });
+
+            modelBuilder.Entity("FlightManagment.Domain.Models.Flight", b =>
+                {
+                    b.Navigation("Passengers");
                 });
 #pragma warning restore 612, 618
         }

@@ -26,6 +26,8 @@ builder.Services.AddIdentityCore<ApplicationUser>()
 builder.Services.AddScoped<IAirportRepository, AirportRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IFlightRepository, FlightRepository>();
+builder.Services.AddScoped<IPassengerRepository, PassengersRepository>();
+
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
