@@ -1,3 +1,5 @@
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.csproj.AssemblyReference.cache
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\appsettings.json
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\compilerconfig.json
@@ -49,8 +51,6 @@ C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Deb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\FlightManagment.Domain.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\FlightManagment.Configurations.pdb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\FlightManagment.Domain.pdb
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.csproj.AssemblyReference.cache
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.AssemblyInfoInputs.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.AssemblyInfo.cs
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.csproj.CoreCompileInputs.cache
