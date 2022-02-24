@@ -9,5 +9,8 @@ namespace FlightManagment.Configurations
     public static class StaticDetails
     {
         public const string ApiBaseUrl = "https://localhost:7068/api/";
+
+        // custom claim types
+        public const string Uid = "Uid";
     }
 }

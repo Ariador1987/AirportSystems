@@ -2,6 +2,7 @@
 using FlightManagment.Domain.Models;
 using FlightManagment.Domain.Models.DTOs.AirportDTOs;
 using FlightManagment.Repository.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ILogger = Serilog.ILogger;
@@ -13,6 +14,7 @@ namespace FlightManagment.API.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AirportsController : ControllerBase
     {
         private readonly IAirportRepository _airportRepository;
@@ -91,6 +93,7 @@ namespace FlightManagment.API.Controllers
         [Route("GetAllByConstructionDate")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllByConstructionDate()
         {
             var location = GetControllerActionNames();

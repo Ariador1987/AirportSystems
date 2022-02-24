@@ -3,7 +3,6 @@ C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\bin\Debug\net6.
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\bin\Debug\net6.0\FlightManagment.Domain.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\bin\Debug\net6.0\ref\FlightManagment.Domain.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\bin\Debug\net6.0\FlightManagment.Domain.pdb
-C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\obj\Debug\net6.0\FlightManagment.Domain.csproj.AssemblyReference.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\obj\Debug\net6.0\FlightManagment.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\obj\Debug\net6.0\FlightManagment.Domain.AssemblyInfoInputs.cache
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.Domain\obj\Debug\net6.0\FlightManagment.Domain.AssemblyInfo.cs
