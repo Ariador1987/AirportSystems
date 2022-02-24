@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FlightManagment.Domain.Models.Passenger;
 
 namespace FlightManagment.Domain.Models.DTOs.PassengerDTOs
 {
@@ -17,13 +18,8 @@ namespace FlightManagment.Domain.Models.DTOs.PassengerDTOs
         [Required]
         [StringLength(maximumLength: 100, ErrorMessage = "Maximum 100 characters.")]
         public string Lastname { get; set; }
-        //public enum Genders
-        //{
-        //    [Display(Name = "Unknown")] Unknown = 0,
-        //    [Display(Name = "Male")] Male = 1,
-        //    [Display(Name = "Female")] Female = 2
-        //};
-        //public Genders Gender { get; set; } = 0;
+        
+        public Genders Gender { get; set; } = 0;
         public int? FlightId { get; set; }
         [ForeignKey(nameof(FlightId))]
         public Flight? Flight { get; set; }

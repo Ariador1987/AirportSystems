@@ -6,5 +6,6 @@ namespace FlightManagment.Repository.Contracts
     {
         Task<List<Passenger>> GetAllWithFlights();
 
+        Task<List<Passenger>> GetCheckedInForFlight(int id);
     }
 }

@@ -45,7 +45,7 @@ namespace FlightManagment.API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Warning($"{location}: Semething went wrong while attempting to retrieve all countries");
+                _logger.Warning($"{location}: Semething went wrong while attempting to retrieve all passengers");
                 return InternalError($"{location}: Retrieval failed. {ex.Message} - {ex.InnerException}.");
             }
         }
@@ -70,7 +70,36 @@ namespace FlightManagment.API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Warning($"{location}: Semething went wrong while attempting to retrieve all countries");
+                _logger.Warning($"{location}: Semething went wrong while attempting to retrieve all passengers");
+                return InternalError($"{location}: Retrieval failed. {ex.Message} - {ex.InnerException}.");
+            }
+        }
+
+        /// <summary>
+        /// Retrives the list of all Passengers with their Airports
+        /// <paramref name="flightId"/>
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetCheckedInForFlight/{flightId:int}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> GetCheckedInForFlight(int flightId)
+        {
+            var location = GetControllerActionNames();
+
+            try
+            {
+                if (flightId < 1)
+                    return BadRequest();
+
+                var passengerList = await _passengersRepository.GetCheckedInForFlight(flightId);
+                var passengerDetailsList = _mapper.Map<List<PassengerBaseDTO>>(passengerList);
+                return StatusCode(200, passengerDetailsList);
+            }
+            catch (Exception ex)
+            {
+                _logger.Warning($"{location}: Semething went wrong while attempting to retrieve all passengers");
                 return InternalError($"{location}: Retrieval failed. {ex.Message} - {ex.InnerException}.");
             }
         }
