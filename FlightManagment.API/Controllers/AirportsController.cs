@@ -14,7 +14,6 @@ namespace FlightManagment.API.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class AirportsController : ControllerBase
     {
         private readonly IAirportRepository _airportRepository;

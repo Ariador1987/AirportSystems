@@ -4,6 +4,7 @@ using FlightManagment.Domain.Models.DTOs.AirportDTOs;
 using System.Text.Json;
 using System.Text;
 using AutoMapper;
+using Blazored.LocalStorage;
 
 namespace FlightManagment.BlazorServerUI.Services
 {
@@ -20,15 +21,22 @@ namespace FlightManagment.BlazorServerUI.Services
 
         private readonly HttpClient _httpClient;
         private readonly IMapper _mapper;
+        private readonly ILocalStorageService _localStorage;
 
-        public AirportService(HttpClient httpClient, IMapper mapper)
+        public AirportService(HttpClient httpClient, 
+            IMapper mapper, 
+            ILocalStorageService localStorage)
         {
             _httpClient = httpClient;
             _mapper = mapper;
+            _localStorage = localStorage;
         }
+
         
         public async Task<List<Airport>> GetAirports()
         {
+            
+
             return await _httpClient.GetFromJsonAsync<List<Airport>>(Path.Combine(StaticDetails.ApiBaseUrl, GetAllPathExtension));
         }
 

@@ -4,8 +4,11 @@ namespace FlightManagment.BlazorServerUI.Services.Authentification
 {
     public interface IAuthenticationService
     {
-        Task<bool> AuthenticateAsync(LoginUserDTO loginDto);
-        
+        public Task<bool> Register(RegisterUserDTO registerDto);
+
+        public Task<bool> Login(LoginUserDTO loginDto);
+
+        public Task Logout();
     }
 
     

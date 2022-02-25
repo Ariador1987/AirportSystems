@@ -3,48 +3,56 @@
 @inject NavigationManager _navMan;
 @inject IJSRuntime js;
 
-<div class="d-flex justify-content-between">
-    <h3>Airports List</h3>
-    <button class="btn btn-primary" @onclick="GoToAddAirport">Add Airport</button>
-</div>
-@if (Airports == null)
-{
-    <div>The list is empty</div>
-}
-else
-{
-    <table class="table table--primary fadeIn">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Country</th>
-                <th>Construction Date</th>
-            </tr>
-        </thead>
-        <tbody class="table--primary__body">
-            @foreach (var airport in Airports)
-            {
+<AuthorizeView Roles="Admin">
+    <Authorized>
+    <div class="d-flex justify-content-between">
+        <h3>Airports List</h3>
+        <button class="btn btn-primary" @onclick="GoToAddAirport">Add Airport</button>
+    </div>
+    @if (Airports == null)
+    {
+        <div>The list is empty</div>
+    }
+    else
+    {
+        <table class="table table--primary fadeIn">
+            <thead>
                 <tr>
-                    <td>@airport.Name</td>
-                    <td>@airport.Country.Name</td>
-                    <td>@Convert.ToDateTime(airport.ConstructionDate).ToString("dd.MM.yyyy")</td>
-                    <td>
-                        <a class="btn btn-primary btn--small"
-                        href="/airportupdate/@airport.Id">
-                            <span class="oi oi-pencil"></span>
-                            Edit Airport
-                        </a>
-                        <a class="btn btn-secondary btn--small"
-                        @onclick="(() => DeleteAirport(airport.Id))">
-                            <span class="oi oi-trash"></span>
-                            Delete Airport
-                        </a>
-                    </td>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Construction Date</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody class="table--primary__body">
+                @foreach (var airport in Airports)
+                {
+                    <tr>
+                        <td>@airport.Name</td>
+                        <td>@airport.Country.Name</td>
+                        <td>@Convert.ToDateTime(airport.ConstructionDate).ToString("dd.MM.yyyy")</td>
+                        <td>
+                            <a class="btn btn-primary btn--small"
+                            href="/airportupdate/@airport.Id">
+                                <span class="oi oi-pencil"></span>
+                                Edit Airport
+                            </a>
+                            <a class="btn btn-secondary btn--small"
+                            @onclick="(() => DeleteAirport(airport.Id))">
+                                <span class="oi oi-trash"></span>
+                                Delete Airport
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 }
+    </Authorized>
+    <NotAuthorized>
+        <p>You are not authorized to see this view</p>
+    </NotAuthorized>
+</AuthorizeView>
+
 
 @code {
     private List<Airport> Airports;

@@ -1,8 +1,16 @@
 ﻿@page "/users/login"
-@inject HttpClient httpClient;
+@inject AuthenticationService _authService;
+@inject NavigationManager _navMan;
 
 <h3>Login</h3>
 
+
+@if (!response)
+{
+    <div class="alert alert-danger">
+        <p>Something went wrong with login attempt.</p>
+    </div>
+}
 <div class="card-body">
     <EditForm Model="loginDto" OnValidSubmit="HandleLogin">
         <DataAnnotationsValidator />
@@ -25,16 +33,16 @@
 
 @code {
     LoginUserDTO loginDto = new LoginUserDTO();
+    private bool response = true;
 
     private async Task HandleLogin()
     {
-        try
+        response = await _authService.Login(loginDto);
+
+        if (response)
         {
-            await httpClient.LoginAsync(loginDto);
+            _navMan.NavigateTo("/");
         }
-        catch(Exception ex)
-        {
-            
-        }
+        
     }
 }

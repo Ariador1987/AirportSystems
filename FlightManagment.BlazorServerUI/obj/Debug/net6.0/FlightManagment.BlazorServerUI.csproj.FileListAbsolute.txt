@@ -68,3 +68,5 @@ C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Deb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\ref\FlightManagment.BlazorServerUI.dll
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.pdb
 C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\obj\Debug\net6.0\FlightManagment.BlazorServerUI.genruntimeconfig.cache
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\BOKI\source\repos\AirportSystems\FlightManagment.BlazorServerUI\bin\Debug\net6.0\Newtonsoft.Json.dll
