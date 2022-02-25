@@ -42,6 +42,7 @@ namespace FlightManagment.API.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("register")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]

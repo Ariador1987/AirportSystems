@@ -1,0 +1,40 @@
+﻿@page "/users/login"
+@inject HttpClient httpClient;
+
+<h3>Login</h3>
+
+<div class="card-body">
+    <EditForm Model="loginDto" OnValidSubmit="HandleLogin">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label class="form-control" for="email">Email Address</label>
+            <InputText class="form-control" @bind-Value="loginDto.Email" />
+            <ValidationMessage For="@(() => loginDto.Email)"/>
+        </div>
+        <div class="form-group">
+            <label class="form-control" for="password">Password</label>
+            <InputText type="password" class="form-control" @bind-Value="loginDto.Password" />
+            <ValidationMessage For="@(() => loginDto.Password)"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="form-control btn btn--primary btn-block">
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    LoginUserDTO loginDto = new LoginUserDTO();
+
+    private async Task HandleLogin()
+    {
+        try
+        {
+            await httpClient.LoginAsync(loginDto);
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }
+}

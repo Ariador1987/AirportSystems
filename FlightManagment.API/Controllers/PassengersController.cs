@@ -83,6 +83,7 @@ namespace FlightManagment.API.Controllers
         [HttpGet]
         [Route("GetCheckedInForFlight/{flightId:int}")]
         [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         [ProducesResponseType(500)]
         public async Task<IActionResult> GetCheckedInForFlight(int flightId)
         {
@@ -91,7 +92,7 @@ namespace FlightManagment.API.Controllers
             try
             {
                 if (flightId < 1)
-                    return BadRequest();
+                    return StatusCode(400);
 
                 var passengerList = await _passengersRepository.GetCheckedInForFlight(flightId);
                 var passengerDetailsList = _mapper.Map<List<PassengerBaseDTO>>(passengerList);
@@ -244,7 +245,6 @@ namespace FlightManagment.API.Controllers
                 await _passengersRepository.DeleteAsync(id);
 
                 return StatusCode(204);
-
             }
             catch (Exception ex)
             {
