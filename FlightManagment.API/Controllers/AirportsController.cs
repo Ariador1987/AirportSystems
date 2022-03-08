@@ -92,7 +92,6 @@ namespace FlightManagment.API.Controllers
         [Route("GetAllByConstructionDate")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllByConstructionDate()
         {
             var location = GetControllerActionNames();

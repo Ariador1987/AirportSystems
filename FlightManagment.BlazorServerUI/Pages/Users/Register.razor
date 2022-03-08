@@ -1,0 +1,64 @@
+﻿@page "/users/register"
+@inject AuthenticationService _authService;
+@inject NavigationManager _navMan;
+<h3>Register a new Application User</h3>
+
+<AuthorizeView Roles="Admin">
+    <Authorized Context="Auth">Hello: @Auth.User.Identity.Name
+        @if (!response)
+{
+    <div class="alert alert-danger">
+        <p>Something went wrong with register attempt.</p>
+    </div>
+}
+    <div class="card-body">
+        <EditForm Model="registerDto" OnValidSubmit="HandleRegister">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="form-group">
+                <label class="form-control" for="email">Email Address</label>
+                <InputText class="form-control" @bind-Value="registerDto.Email" />
+            </div>
+            <div class="form-group">
+                <label class="form-control" for="password">Password</label>
+                <InputText type="password" class="form-control" @bind-Value="registerDto.Password" />
+            </div>
+            <div class="form-group">
+                <label class="form-control" for="password">First Name</label>
+                <InputText type="text" class="form-control" @bind-Value="registerDto.FirstName" />
+            </div>
+            <div class="form-group">
+                <label class="form-control" for="password">Last Name</label>
+                <InputText type="text" class="form-control" @bind-Value="registerDto.LastName" />
+            </div>
+            <div class="form-group">
+                <label class="form-control" for="password" >Role</label>
+                <InputText type="text" class="form-control" placeholder="Admin or Checker" @bind-Value="registerDto.Role" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="form-control btn btn--primary btn-block"></div>
+            </EditForm>
+        </div>
+    </Authorized>                
+    <NotAuthorized>
+        <h4>Unauthorized</h4>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code {
+    RegisterUserDTO registerDto = new RegisterUserDTO();
+    private bool response = true;
+
+    private async Task HandleRegister()
+    {
+        response = await _authService.Register(registerDto);
+
+        if (response)
+        {
+            _navMan.NavigateTo("/users/login");
+        }
+    }
+
+}

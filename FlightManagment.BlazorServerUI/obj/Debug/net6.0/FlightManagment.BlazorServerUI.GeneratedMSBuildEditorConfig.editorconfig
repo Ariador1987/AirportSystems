@@ -59,8 +59,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Passengers/PassengersList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFzc2VuZ2Vyc1xQYXNzZW5nZXJzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Users/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Users/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcTG9nb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Users/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Shared/SurveyPrompt.razor]

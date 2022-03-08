@@ -24,6 +24,7 @@ builder.Services.AddScoped<AuthenticationStateProvider>(x =>
 builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<AirportService>();
 builder.Services.AddScoped<CountryService>();
+builder.Services.AddScoped<PassengersService>();
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 

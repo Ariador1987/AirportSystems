@@ -76,16 +76,16 @@ namespace FlightManagment.API.Controllers
         }
 
         /// <summary>
-        /// Retrives the list of all Passengers with their Airports
+        /// Retrives the list of all non checked in Passengers with their Flight
         /// <paramref name="flightId"/>
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("GetCheckedInForFlight/{flightId:int}")]
+        [Route("GetNonCheckedInForFlight/{flightId:int}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> GetCheckedInForFlight(int flightId)
+        public async Task<IActionResult> GetNonCheckedInForFlight(int flightId)
         {
             var location = GetControllerActionNames();
 
@@ -94,7 +94,7 @@ namespace FlightManagment.API.Controllers
                 if (flightId < 1)
                     return StatusCode(400);
 
-                var passengerList = await _passengersRepository.GetCheckedInForFlight(flightId);
+                var passengerList = await _passengersRepository.GetNonCheckedInForFlight(flightId);
                 var passengerDetailsList = _mapper.Map<List<PassengerBaseDTO>>(passengerList);
                 return StatusCode(200, passengerDetailsList);
             }

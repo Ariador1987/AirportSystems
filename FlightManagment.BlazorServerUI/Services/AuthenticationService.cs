@@ -14,6 +14,7 @@ namespace FlightManagment.BlazorServerUI.Services
     public class AuthenticationService : IAuthenticationService
     {
         public const string LoginPath = "https://localhost:7068/api/Account/login";
+        public const string RegisterPath = "https://localhost:7068/api/Account/register";
 
         private readonly ILocalStorageService _localStorage;
         private readonly HttpClient _httpClient;
@@ -28,9 +29,16 @@ namespace FlightManagment.BlazorServerUI.Services
             _authenticationStateProvider = authenticationStateProvider;
         }
 
-        public Task<bool> Register(RegisterUserDTO registerDto)
+        public async Task<bool> Register(RegisterUserDTO registerDto)
         {
-            throw new NotImplementedException();
+            var request = new HttpRequestMessage(HttpMethod.Post, RegisterPath);
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(registerDto), Encoding.UTF8, "application/json");
+            var response = await _httpClient.SendAsync(request);
+
+            if (!response.IsSuccessStatusCode)
+                return false;
+
+            return true;
         }
 
         public async Task<bool> Login(LoginUserDTO loginDto)

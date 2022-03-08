@@ -1,0 +1,85 @@
+﻿@page "/passengerslist"
+@inject Services.PassengersService _passengerService;
+@inject NavigationManager _navMan;
+@inject IJSRuntime js;
+
+
+    <div class="d-flex justify-content-between">
+        <h3>Passengers List</h3>
+        <button class="btn btn-primary" @onclick="GoToAddPassenger">Add Passenger</button>
+    </div>
+    @if (Passengers == null)
+    {
+        <div>The list is empty</div>
+    }
+    else
+    {
+        <table class="table table--primary fadeIn">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Gender</th>
+                    <th>Flight Number</th>
+                    <th>Seat Number</th>
+                    <th>Checked in</th>
+                </tr>
+            </thead>
+            <tbody class="table--primary__body">
+                @foreach (var passenger in Passengers)
+                {
+                    <tr>
+                        <td>@passenger.Firstname</td>
+                        <td>@passenger.Lastname</td>
+                        <td>@passenger.Gender</td>
+                        @if (passenger.FlightId < 0) {
+                        <td>No Flight</td>
+                    } else
+                    {
+                        <td>@passenger.FlightId</td>
+                    }
+                    <td>@passenger.SeatNumber</td>
+                        <td>@passenger.isCheckedIn</td>
+                        <td>
+                            <a class="btn btn-primary btn--small"
+                            href="/passengerupdate/@passenger.Id">
+                                <span class="oi oi-pencil"></span>
+                                Edit Passenger
+                            </a>
+                            <a class="btn btn-secondary btn--small"
+                            @onclick="(() => DeletePassenger(passenger.Id))">
+                                <span class="oi oi-trash"></span>
+                                Delete Passenger
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+
+@code {
+    private List<Passenger> Passengers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Passengers = await _passengerService.GetPassengersWithFlights();
+    }
+
+    private void GoToAddPassenger()
+    {
+        //_navMan.NavigateTo("airportadd");
+    }
+
+    private async Task DeletePassenger(int id) 
+    {
+        var passenger = Passengers.FirstOrDefault(x => x.Id == id);
+        var confirm = await js.InvokeAsync<bool>("confirm", $"Are you sure you want to delete {passenger.Firstname} {passenger.Lastname}?");
+        if (confirm)
+        {
+            await _passengerService.DeletePassengerAsync(id);
+            await OnInitializedAsync();
+        }
+    }
+}
+

@@ -174,9 +174,9 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:FlightManagment.API.Controllers.PassengersController.GetCheckedInForFlight(System.Int32)">
+        <member name="M:FlightManagment.API.Controllers.PassengersController.GetNonCheckedInForFlight(System.Int32)">
             <summary>
-            Retrives the list of all Passengers with their Airports
+            Retrives the list of all non checked in Passengers with their Flight
             <paramref name="flightId"/>
             </summary>
             <returns></returns>

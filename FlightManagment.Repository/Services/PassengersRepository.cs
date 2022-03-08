@@ -28,11 +28,11 @@ namespace FlightManagment.Repository.Services
                 .ToListAsync();
         }
 
-        public async Task<List<Passenger>> GetCheckedInForFlight(int id)
+        public async Task<List<Passenger>> GetNonCheckedInForFlight(int id)
         {
             return await _context.Passengers
                 .Include(x => x.Flight)
-                .Where(x => x.FlightId == id && x.isCheckedIn == true)
+                .Where(x => x.FlightId == id && x.isCheckedIn == false)
                 .ToListAsync();
         }
     }
