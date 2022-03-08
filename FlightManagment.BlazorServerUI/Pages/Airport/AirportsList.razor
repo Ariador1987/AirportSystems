@@ -59,7 +59,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Airports = await _airportService.GetAirports();
+        Airports = await _airportService.GetAirportsWithDetails();
     }
 
     private void GoToAddAirport()

@@ -21,8 +21,9 @@ namespace FlightManagment.Repository.Services
         public async Task<List<Flight>> GetFlightsWithDetails()
         {
             return await _context.Flights
+                .Include(x => x.Passengers)
                 .Include(x => x.Airport)
-                .ThenInclude(x => x.Country)
+                .ThenInclude(airport => airport.Country)
                 .ToListAsync();
         }
     }

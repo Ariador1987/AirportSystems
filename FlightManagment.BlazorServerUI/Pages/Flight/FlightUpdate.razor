@@ -1,0 +1,105 @@
+﻿@page "/flightupdate/{id:int}"
+@using FlightManagment.Configurations
+@inject Services.FlightService _flightService;
+@inject Services.AirportService _airportService;
+@inject NavigationManager _navMan;
+
+<AuthorizeView Roles="Admin">
+    <Authorized Context="Auth">
+        @if (Flight is null)
+{
+    <div>Please Wait</div>
+}
+else
+{
+    <EditForm Model="@Flight" OnValidSubmit="@UpdateFlightAsync" class="form form--gradient mt-5">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <h4 class="form__header">Update Flight</h4>
+        <div class="form__group">
+            <label for="name" class="form__label">Flight Name</label>
+            <InputText type="text" @bind-Value="Flight.FlightNumber" class="form__input" id="name" />
+        </div>
+        <div class="form__group">
+            <label for="name" class="form__label">Flight Time</label>
+            <InputText type="text" @bind-Value="Flight.FlightTime" class="form__input" id="name" />
+        </div>
+        <div class="form__group">
+            <label for="name" class="form__label">Carrier</label>
+            <InputText type="text" @bind-Value="Flight.Carrier" class="form__input" id="name" />
+        </div>
+        <div class="form__group">
+            <label for="airport" class="form__label">Departure Airport</label>
+            @* <InputNumber @bind-Value="Flight.AirportId" class="form__input" id="airport" />*@
+            <InputSelect id="airport" @bind-Value="@Flight.AirportId">
+                <option disabled selected>-- Select --</option>
+                @if (Airports is null)
+                {
+                <div>Please Wait</div>
+                }
+                else
+                {
+                @foreach (var airport in Airports)
+                    {
+                    <option value="@airport.Id">@airport.Name</option>
+                    }
+                }
+        </InputSelect>
+    </div>
+    <div class="form__group">
+        <label for="date" class="form__label">Flight Date</label>
+        <InputDate @bind-Value="Flight.FlightDate" class="form__input" id="date" />
+    </div>
+    <div class="form__buttons">
+        <button class="btn" @onclick="Close">Back To list</button>
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</EditForm>
+}
+    </Authorized>
+    <NotAuthorized>
+        <div>
+            You are not authorized to see this view
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    [Parameter]
+    public FlightUpdateDTO Flight { get; set; }
+    public List<Airport> Airports { get; set; }
+
+    [Parameter]
+    public int id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Flight = await _flightService.GetFlightByIdForUpdate(id);
+        Airports = await _airportService.GetAirports();
+    }
+
+    private async Task UpdateFlightAsync()
+    {
+        try
+        {
+            // bugfix
+            if (Flight.AirportId == 0)
+            {
+                Flight.AirportId = 1;
+            }
+
+            await _flightService.UpdateFlightAsync(Flight, id);
+            Close();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    private void Close()
+    {
+        _navMan.NavigateTo("flightslist");
+    }
+}

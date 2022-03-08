@@ -55,6 +55,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Flight/FlightAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxpZ2h0XEZsaWdodEFkZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Flight/FlightsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxpZ2h0XEZsaWdodHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Flight/FlightUpdate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxpZ2h0XEZsaWdodFVwZGF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BOKI/source/repos/AirportSystems/FlightManagment.BlazorServerUI/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,91 @@
+﻿@page "/flightslist"
+@inject Services.FlightService _flightService;
+@inject NavigationManager _navMan;
+@inject IJSRuntime js;
+
+<AuthorizeView Roles="Admin, Checker">
+    <Authorized>
+    <div class="d-flex justify-content-between">
+        <h3>Flights List</h3>
+        @if (context.User.IsInRole("Admin"))
+            {
+                <button class="btn btn-primary" @onclick="GoToAddFlight">Add Flight</button>
+            }
+    </div>
+    @if (Flights == null)
+    {
+        <div>The list is empty</div>
+    }
+    else
+    {
+        <table class="table table--primary fadeIn">
+            <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>Arrival from </th>
+                    <th>Carrier</th>
+                    <th>Passengers</th>
+                    <th>Flight Date</th>
+                </tr>
+            </thead>
+            <tbody class="table--primary__body">
+                @foreach (var flight in Flights)
+                {
+                    <tr>
+                        <td>@flight.FlightNumber</td>
+                        <td>@flight.Airport.Name</td>
+                        <td>@flight.Carrier</td>
+                        <td>@flight.Passengers.Count()</td>
+                        <td>@flight.FlightDate.ToString("dd.MM.yyyy")</td>
+                            @if (context.User.IsInRole("Admin"))
+                            {
+                                <td>
+                                    <a class="btn btn-primary btn--small"
+                                    href="/flightupdate/@flight.Id">
+                                        <span class="oi oi-pencil"></span>
+                                        Edit Flight
+                                    </a>
+                                    <a class="btn btn-secondary btn--small"
+                                    @onclick="(() => DeleteFlight(flight.Id))">
+                                        <span class="oi oi-trash"></span>
+                                        Delete Flight
+                                    </a>
+                                </td>
+                            }
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+    </Authorized>
+    <NotAuthorized>
+        <h3>You are not authorized to see this view</h3>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    private List<Flight> Flights;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Flights = await _flightService.GetFlightsWithDetails();
+    }
+
+    private void GoToAddFlight()
+    {
+        _navMan.NavigateTo("flightadd");
+    }
+
+    private async Task DeleteFlight(int id) 
+    {
+        var flight = Flights.FirstOrDefault(x => x.Id == id);
+        var confirm = await js.InvokeAsync<bool>("confirm", $"Are you sure you want to delete {flight.FlightNumber}?");
+        if (confirm)
+        {
+            await _flightService.DeleteFlightAsync(id);
+            await OnInitializedAsync();
+        }
+    }
+}
+

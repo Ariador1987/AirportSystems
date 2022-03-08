@@ -28,6 +28,8 @@ namespace FlightManagment.Configurations.MapperConfig
             CreateMap<Flight, FlightCreateDTO>().ReverseMap();
             CreateMap<Flight, FlightUpdateDTO>().ReverseMap();
             CreateMap<Flight, FlightDetailsDTO>().ReverseMap();
+            CreateMap<FlightBaseDTO, FlightUpdateDTO>().ReverseMap();
+
 
             CreateMap<Passenger, PassengerBaseDTO>().ReverseMap();
 

@@ -13,7 +13,6 @@ namespace FlightManagment.BlazorServerUI.Services
         public const string GetAllPathExtension = "Airports/GetAll";
         public const string GetAllByConstructionDate = "Airports/GetAllByConstructionDate";
         public const string GetById = "https://localhost:7068/api/Airports/GetSingleAirport/";
-        //public const string AddAirport = "Airports/AddAirport";
         public const string AddAirport = "https://localhost:7068/api/Airports/AddAirport";
         public const string UpdateAirport = "https://localhost:7068/api/Airports/UpdateAirport/";
         public const string DeleteAirport = "https://localhost:7068/api/Airports/DeleteAirport/";
@@ -32,6 +31,11 @@ namespace FlightManagment.BlazorServerUI.Services
 
         
         public async Task<List<Airport>> GetAirports()
+        {
+            return await _httpClient.GetFromJsonAsync<List<Airport>>(Path.Combine(StaticDetails.ApiBaseUrl, GetAllPathExtension));
+        }
+
+        public async Task<List<Airport>> GetAirportsWithDetails()
         {
             return await _httpClient.GetFromJsonAsync<List<Airport>>(Path.Combine(StaticDetails.ApiBaseUrl, GetAllPathExtension));
         }
