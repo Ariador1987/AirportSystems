@@ -9,4 +9,6 @@ Flight Managment Module Demo App
 - AutoMapper and DTO's
 - Webcompiler (for custom scss files)
 
-WebCompiler can give issues upon project initialization - if that's the case. Clean then Build (Not rebuild, as the rebuild makes the thread freeze for some reason)
+IMPORTANT:
+  WebCompiler can give issues upon project initialization - if that's the case. Clean then Build (Not rebuild, as the rebuild makes the thread freeze for some reason)
+  Username / Password => admin@as.com / P@ssword1 and checker@as.com / P@ssword1
